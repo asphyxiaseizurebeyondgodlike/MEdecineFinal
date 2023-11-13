@@ -12,41 +12,15 @@ using System.Windows.Forms;
 
 namespace MEdecineFinal
 {
-    public partial class InfoPacients : Form
+    public partial class PacientInformation : Form
     {
         database db = new database();
-        public InfoPacients()
+        public PacientInformation()
         {
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            string query = "select * from Patients";
-            SqlDataAdapter adapter = new SqlDataAdapter(query, db.GetConnection());
-
-            DataSet dataSet = new DataSet();
-
-            adapter.Fill(dataSet);
-            dataGridView1.DataSource = dataSet.Tables[0];
-
-
-
-
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            string query = "select DOCTORS.id,name,surname, otchestvo, DOCTORS.uvolen from name_doctor INNER JOIN DOCTORS on name_doctor.id = DOCTORS.id WHERE DOCTORS.uvolen = 'нет'";
-            SqlDataAdapter adapter = new SqlDataAdapter(query, db.GetConnection());
-
-            DataSet dataSet = new DataSet();
-
-            adapter.Fill(dataSet);
-            dataGridView1.DataSource = dataSet.Tables[0];
-        }
-
-        private void button3_Click(object sender, EventArgs e)
+        private void Button3_Click(object sender, EventArgs e)
         {
             int idDoc = int.Parse(textBox1.Text);
             string query = $"select first_name, last_name from Patients WHERE attending_doctor_id = {idDoc}";
@@ -58,7 +32,7 @@ namespace MEdecineFinal
             dataGridView1.DataSource = dataSet.Tables[0];
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void TextBox1_TextChanged(object sender, EventArgs e)
         {
 
         }
@@ -66,6 +40,28 @@ namespace MEdecineFinal
         private void InfoPacients_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            string query = "select DOCTORS.id,name,surname, otchestvo, DOCTORS.uvolen from name_doctor INNER JOIN DOCTORS on name_doctor.id = DOCTORS.id WHERE DOCTORS.uvolen = 'нет'";
+            SqlDataAdapter adapter = new SqlDataAdapter(query, db.GetConnection());
+
+            DataSet dataSet = new DataSet();
+
+            adapter.Fill(dataSet);
+            dataGridView1.DataSource = dataSet.Tables[0];
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            string query = "select * from Patients";
+            SqlDataAdapter adapter = new SqlDataAdapter(query, db.GetConnection());
+
+            DataSet dataSet = new DataSet();
+
+            adapter.Fill(dataSet);
+            dataGridView1.DataSource = dataSet.Tables[0];
         }
     }
 }

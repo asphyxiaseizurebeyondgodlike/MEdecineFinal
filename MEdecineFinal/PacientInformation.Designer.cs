@@ -1,6 +1,6 @@
 ﻿namespace MEdecineFinal
 {
-    partial class InfoPacients
+    partial class PacientInformation
     {
         /// <summary>
         /// Required designer variable.
@@ -54,7 +54,7 @@
             button1.TabIndex = 1;
             button1.Text = "Узнать информацию";
             button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            button1.Click += button1_Click_1;
             // 
             // button2
             // 
@@ -64,7 +64,7 @@
             button2.TabIndex = 2;
             button2.Text = "Информация о врачах";
             button2.UseVisualStyleBackColor = true;
-            button2.Click += button2_Click;
+            button2.Click += button2_Click_1;
             // 
             // textBox1
             // 
@@ -72,7 +72,6 @@
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(134, 23);
             textBox1.TabIndex = 3;
-            textBox1.TextChanged += textBox1_TextChanged;
             // 
             // button3
             // 
@@ -82,7 +81,7 @@
             button3.TabIndex = 4;
             button3.Text = "Посмотреть";
             button3.UseVisualStyleBackColor = true;
-            button3.Click += button3_Click;
+            button3.Click += Button3_Click;
             // 
             // label1
             // 
@@ -93,7 +92,7 @@
             label1.TabIndex = 5;
             label1.Text = "Введите ID доктора, чьих пациентов вы хотите видеть";
             // 
-            // InfoPacients
+            // PacientInformation
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -104,9 +103,8 @@
             Controls.Add(button2);
             Controls.Add(button1);
             Controls.Add(dataGridView1);
-            Name = "InfoPacients";
+            Name = "PacientInformation";
             Text = "InfoPacients";
-            Load += InfoPacients_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();

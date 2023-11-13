@@ -9,7 +9,7 @@ namespace MEdecineFinal
 
         private void button1_Click(object sender, EventArgs e)
         {
-            InfoPacients ip = new InfoPacients();
+            PacientInformation ip = new PacientInformation();
             ip.ShowDialog();
         }
 

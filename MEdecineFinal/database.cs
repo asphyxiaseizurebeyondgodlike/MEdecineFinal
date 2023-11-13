@@ -12,7 +12,7 @@ namespace MEdecineFinal
     {
         SqlConnection db = new SqlConnection(@"Data Source = DESKTOP-BD9J92E\SQLEXPRESS;Initial Catalog = FinalMedecine;Integrated Security = True");
 
-        public void OpenConnection()
+        public void OpenConnection() 
         {
             if(db.State == System.Data.ConnectionState.Closed)
             {
